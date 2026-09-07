@@ -1,0 +1,45 @@
+# OriginCheck
+
+Local desktop app that estimates whether a **JPG** image or **PDF** file is AI-generated.
+
+Python runs the GUI, file loading, and scoring. A C++ module (optional) does the heavy forensic math. If the C++ extension is not compiled, the same analysis runs in Python.
+
+## What you get
+
+- Dark GUI to pick **JPG** or **PDF**
+- File upload and preview
+- A verdict: **AI generated**, **Likely authentic**, or **Uncertain**
+- An AI-likelihood score plus the signals behind it
+
+The detector looks at camera-like noise, texture, frequency spectrum, JPEG error levels, and generator/camera metadata. It is a forensic estimate, not a guarantee.
+
+## Run the app
+
+```powershell
+cd C:\Users\samvelg\Documents\Scripts\ai-detector
+python -m pip install -r requirements.txt
+python -m origincheck
+```
+
+Or double-click `run.bat`.
+
+## Optional C++ engine
+
+The GUI works without this step. Compiling the extension switches analysis to the faster C++ path.
+
+You need a C++17 compiler (Visual Studio Build Tools on Windows) plus setuptools:
+
+```powershell
+python -m pip install setuptools pybind11
+python setup.py build_ext --inplace
+python -m origincheck
+```
+
+The sidebar shows `Engine: C++ forensics` when the native module loaded, otherwise `Engine: Python forensics`.
+
+## Project layout
+
+- `origincheck/app.py` — GUI
+- `origincheck/detector.py` — JPG/PDF pipeline
+- `origincheck/python_forensics.py` — Python feature extractor
+- `cpp/` — C++ feature extractor and pybind11 bindings

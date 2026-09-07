@@ -1,0 +1,5 @@
+CompileFlags:
+  Add:
+    - -I/home/samvel/Dev/AI-detector/cpp/include
+    - -isystem
+    - /usr/include/python3.12

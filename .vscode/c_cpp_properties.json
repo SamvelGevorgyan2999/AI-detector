@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "compilerPath": "/usr/bin/c++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "includePath": [
+        "${workspaceFolder}/cpp/include",
+        "/usr/include/python3.12"
+      ],
+      "defines": [
+        "PY_SSIZE_T_CLEAN"
+      ]
+    }
+  ],
+  "version": 4
+}

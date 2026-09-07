@@ -1,0 +1,5 @@
+customtkinter>=5.2
+numpy>=1.26
+pillow>=10.0
+pypdfium2>=4.30
+pybind11>=2.12
