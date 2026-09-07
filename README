@@ -1,6 +1,6 @@
 # OriginCheck
 
-Local desktop app that estimates whether a **JPG** image or **PDF** file is AI-generated.
+Local desktop app that analyzes images and PDF pages for signs of AI generation.
 
 Python runs the GUI, file loading, and scoring. A C++ module (optional) does the heavy forensic math. If the C++ extension is not compiled, the same analysis runs in Python.
 
